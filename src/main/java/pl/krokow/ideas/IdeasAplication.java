@@ -25,15 +25,15 @@ public class IdeasAplication {
          *
          */
 
-        boolean applicationLoop =true;
+        boolean applicationLoop = true;
 
         UserInputManager userInputManager = new UserInputManager();
 
-        while (applicationLoop){
+        while (applicationLoop) {
             try {
                 UserInputCommand userInputCommand = userInputManager.nextCommand();
                 System.out.println(userInputCommand);
-            } catch (Exception e){
+            } catch (Exception e) {
                 e.printStackTrace();
             }
         }
