@@ -1,5 +1,6 @@
 package pl.krokow.ideas;
 
+import pl.krokow.ideas.handlers.CategoryCommandHandler;
 import pl.krokow.ideas.handlers.CommandHandler;
 import pl.krokow.ideas.handlers.HelpCommandHandler;
 import pl.krokow.ideas.handlers.QuitCommandHandler;
@@ -39,6 +40,8 @@ public class IdeasAplication {
         List<CommandHandler> handlers = new ArrayList<CommandHandler>();
         handlers.add(new HelpCommandHandler());
         handlers.add(new QuitCommandHandler());
+        handlers.add(new CategoryCommandHandler());
+
 
         while (applicationLoop) {
             try {
@@ -55,7 +58,7 @@ public class IdeasAplication {
                 currentHandler
                         .orElseThrow(() -> new IllegalArgumentException("Unknown handler: " + userInputCommand.getCommand()))
                         .handle(userInputCommand);
-            } catch (QuitIdeasAplicationException e) {
+            } catch (QuitIdeasApplicationException e) {
                 System.out.println("Quit...");
                 applicationLoop = false;
 

@@ -25,3 +25,9 @@
   a) optional
   b) log nieznany command handler
   c) break głównej pętli
+
+5. ## Komunikacja z systemem plików oraz utrwalenie danych
+- CategoryCommandHandler - szablon
+- Zapis do pliku, komunikacja z DAO, CategoryDao
+- Wypełnienie CategoryCommandHandler
+- Category.toString
