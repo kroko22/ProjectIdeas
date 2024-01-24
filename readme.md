@@ -31,3 +31,8 @@
 - Zapis do pliku, komunikacja z DAO, CategoryDao
 - Wypełnienie CategoryCommandHandler
 - Category.toString
+
+6. ## Serializacia obiektów
+- Copy CategoryDao to QuestionDao-> problem z serializacją
+  - zależność jackson-databind
+  - Refaktor QuestionDao z jackson
