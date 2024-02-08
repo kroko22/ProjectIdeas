@@ -29,7 +29,7 @@ public class QuestionDao {
             });
         } catch (IOException e) {
             e.printStackTrace();
-            return null;
+            return new ArrayList<>();
         }
     }
 
@@ -38,7 +38,7 @@ public class QuestionDao {
             List<Question> questions = getQuestions();
             questions.add(question);
 
-            Files.writeString(Paths.get("./questions.txt"), objectMapper.writeValueAsString(question));
+            Files.writeString(Paths.get("./questions.txt"), objectMapper.writeValueAsString(questions));
 
         } catch (IOException e) {
             e.printStackTrace();

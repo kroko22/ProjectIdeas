@@ -36,3 +36,12 @@
 - Copy CategoryDao to QuestionDao-> problem z serializacją
   - zależność jackson-databind
   - Refaktor QuestionDao z jackson
+
+7. ## Refaktoryzacia kodu
+- Wprowadzenie enum Action
+  - Refaktor o wprowadzeniu UserInputCommand.action
+- QuestionCommandHandler
+  - dodanie CategoryDao i pobranie kategorii
+  - metoda CategoryDao.findOne
+  - refaktor CategoryDao na jackson
+  - Model.Question - default konstruktor la jackson

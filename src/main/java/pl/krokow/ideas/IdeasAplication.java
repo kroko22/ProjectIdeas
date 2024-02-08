@@ -1,9 +1,6 @@
 package pl.krokow.ideas;
 
-import pl.krokow.ideas.handlers.CategoryCommandHandler;
-import pl.krokow.ideas.handlers.CommandHandler;
-import pl.krokow.ideas.handlers.HelpCommandHandler;
-import pl.krokow.ideas.handlers.QuitCommandHandler;
+import pl.krokow.ideas.handlers.*;
 import pl.krokow.ideas.input.UserInputCommand;
 import pl.krokow.ideas.input.UserInputManager;
 
@@ -41,6 +38,7 @@ public class IdeasAplication {
         handlers.add(new HelpCommandHandler());
         handlers.add(new QuitCommandHandler());
         handlers.add(new CategoryCommandHandler());
+        handlers.add(new QuestionCommandHandler());
 
 
         while (applicationLoop) {
