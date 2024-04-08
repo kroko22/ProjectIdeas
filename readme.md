@@ -45,3 +45,13 @@
   - metoda CategoryDao.findOne
   - refaktor CategoryDao na jackson
   - Model.Question - default konstruktor la jackson
+
+8. ### Logi, obsługa wyjątków oraz walidacja danych
+- dodajemy Loggery: do wszystkich klas
+- AnswerCommandHandler kopia z question
+  - questionDao.findOne
+  - questionDao.addAnswer
+- walidacja parametrów
+  - spróbować wprowadzić niepoprawne dane
+  - CategoryCommandHandler walidacja parametrów
+  - główna pętla dodatkowy catch na walidacje

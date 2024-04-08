@@ -10,8 +10,12 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class QuestionDao {
+
+    private static Logger LOG = Logger.getLogger(QuestionDao.class.getName());
 
     private ObjectMapper objectMapper;
 
@@ -28,7 +32,7 @@ public class QuestionDao {
             return objectMapper.readValue(Files.readString(Paths.get("./questions.txt")), new TypeReference<>() {
             });
         } catch (IOException e) {
-            e.printStackTrace();
+            LOG.log(Level.WARNING, "Error on getQuestions", e);
             return new ArrayList<>();
         }
     }
@@ -41,7 +45,7 @@ public class QuestionDao {
             Files.writeString(Paths.get("./questions.txt"), objectMapper.writeValueAsString(questions));
 
         } catch (IOException e) {
-            e.printStackTrace();
+            LOG.log(Level.WARNING, "Error on addQuestion", e);
         }
     }
 }
